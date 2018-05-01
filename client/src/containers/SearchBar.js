@@ -14,9 +14,14 @@ class SearchBar extends Component {
       term: event.target.value
     })
   }
+
+  onFormSubmit(event) {
+    // Prevents browser from submitting form.
+    event.preventDefault();
+  }
   render() {
     return (
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
         <input
           placeholder="Get a weather forecast in select City!"
           className="form-control"
